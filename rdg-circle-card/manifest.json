@@ -1,0 +1,14 @@
+{
+  "manifest_version": 1,
+  "name": "RdG Circle Card",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Configurable single circle graph for any value sensor. Specially designed for energy dashboards.",
+  "authors": ["Rinse de Groot"],
+  "keywords": ["lovelace", "sensor", "circle", "custom card", "energy"],
+  "source": "https://github.com/youruser/rdg-circle-card",
+  "documentation": "https://github.com/youruser/rdg-circle-card",
+  "assets": ["../preview.gif"],
+  "dependencies": [],
+  "codeowners": ["@yourgithubusername"]
+}
