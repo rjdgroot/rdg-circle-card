@@ -51,14 +51,20 @@ class RdGMultiCircleCardEditor extends LitElement {
       obj = obj[key];
     }
   
-    if (value === undefined) {
-      delete obj[keys[0]];
+    if (keys[0] === 'tap_action') {
+      obj[keys[0]] = { ...(obj[keys[0]] || {}), action: value };
     } else {
-      obj[keys[0]] = value;
+      if (value === undefined) {
+        delete obj[keys[0]];
+      } else {
+        obj[keys[0]] = value;
+      }
     }
   
     this._config = { ...this._config };
-    this.dispatchEvent(new CustomEvent("config-changed", { detail: { config: this._config } }));
+    this.dispatchEvent(new CustomEvent("config-changed", { 
+      detail: { config: this._config }, 
+    }));
   }
 
   render() {
@@ -101,9 +107,15 @@ class RdGMultiCircleCardEditor extends LitElement {
               @change=${(e) => this._valueChanged(e, 'show_labels')}
             ></ha-switch>
           </ha-formfield>
-</div>
+        </div>
       </details>
     `;
+  }
+
+  _fireConfigChanged() {
+    this.dispatchEvent(new CustomEvent('config-changed', {
+      detail: { config: this._config }
+    }));
   }
 
   _renderCircleSection(index) {
@@ -166,6 +178,18 @@ class RdGMultiCircleCardEditor extends LitElement {
             @input=${(e) => this._valueChanged(e, `${key}.alert_value`)}
           ></ha-textfield>
 
+          <ha-select
+            label="Tap action"
+            .value=${this._config.tap_action?.action ?? 'none'}
+            @value-changed=${(e) => this._valueChanged(e, 'tap_action')}
+          >
+            <mwc-list-item value="none">None</mwc-list-item>
+            <mwc-list-item value="toggle">Toggle</mwc-list-item>
+            <mwc-list-item value="more-info">More Info</mwc-list-item>
+            <mwc-list-item value="navigate">Navigate</mwc-list-item>
+            <mwc-list-item value="call-service">Call Service</mwc-list-item>
+          </ha-select>
+          
           <ha-textfield
             label="Positive stroke color"
             .value=${cfg.stroke_color_positive || ''}

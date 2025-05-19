@@ -257,8 +257,13 @@ class RdGCircleCard extends LitElement {
 
   set hass(hass) {
     this._hass = hass;
-    this.state = hass.states[this.config.entity];
+    this.state = hass.states?.[this.config.entity];
+    if (!this.state) return; // sla render over als entity nog niet bestaat
     this.requestUpdate();
+    if (!hass.states?.[this.config.entity]) {
+      this._hass = hass;
+      return; // entity bestaat nog niet, dus nog niet renderen
+    }    
   
     const state = this.config.attribute
       ? this.state.attributes[this.config.attribute]
@@ -319,9 +324,8 @@ class RdGCircleCard extends LitElement {
     }
   }
   
-
-  _click() {
-    this._fire('hass-more-info', { entityId: this.config.entity });
+  _click(e) {
+    this._handleAction(e);
   }
 
   _calculateValueBetween(start, end, val) {
@@ -531,6 +535,46 @@ class RdGCircleCard extends LitElement {
   _updateSize() {
     const size = this.offsetWidth;
     this.style.setProperty('--circle-sensor-width', size + 'px');
+  }
+
+  _handleAction(e) {
+    const action = this.config?.tap_action?.action || 'none';
+  
+    switch (action) {
+      case 'more-info':
+        this.dispatchEvent(
+          new CustomEvent('hass-more-info', {
+            detail: { entityId: this.config.entity },
+            bubbles: true,
+            composed: true,
+          })
+        );
+        break;
+  
+      case 'navigate':
+        if (this.config.tap_action?.navigation_path) {
+          history.pushState(null, '', this.config.tap_action.navigation_path);
+          window.dispatchEvent(new Event('location-changed'));
+        }
+        break;
+  
+      case 'url':
+        if (this.config.tap_action?.url_path) {
+          window.open(this.config.tap_action.url_path, '_blank');
+        }
+        break;
+  
+      case 'call-service':
+        if (this.config.tap_action?.service) {
+          const [domain, service] = this.config.tap_action.service.split('.');
+          this._hass.callService(domain, service, this.config.tap_action.service_data || {});
+        }
+        break;
+  
+      case 'none':
+      default:
+        break;
+    }
   }  
 }
 customElements.define('rdg-circle-card', RdGCircleCard);
@@ -539,5 +583,5 @@ window.customCards.push({
   type: "rdg-circle-card",
   name: "RdG Circle Card",
   description: "Configurable single circle graph for any value sensor. Specially designed for energy dashboards.",
-  preview: "/local/www/rdg-circle-card/preview.gif"
+  preview: true,
 });

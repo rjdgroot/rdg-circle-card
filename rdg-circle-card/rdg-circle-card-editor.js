@@ -39,22 +39,35 @@ class RdGCircleCardEditor extends LitElement {
     return this._config;
   }
 
-  _valueChanged(e, key) {
-    const raw = e.target?.value;
+  _valueChanged(e, path) {
+    const raw = e.target?.checked ?? e.target?.value;
     const value = raw === '' ? undefined : raw;
   
-    if (value === undefined) {
-      const newConfig = { ...this._config };
-      delete newConfig[key];
-      this._config = newConfig;
-    } else {
-      this._config = {
-        ...this._config,
-        [key]: value,
-      };
+    const keys = path.split('.');
+    let obj = this._config;
+  
+    while (keys.length > 1) {
+      const key = keys.shift();
+      obj[key] = obj[key] || {};
+      obj = obj[key];
     }
   
-    this.dispatchEvent(new CustomEvent("config-changed", { detail: { config: this._config } }));
+    if (keys[0] === 'tap_action') {
+      obj[keys[0]] = typeof value === 'string' 
+        ? { action: value } 
+        : { ...(obj[keys[0]] || {}), ...value };
+    }
+  
+    this._config = { ...this._config };
+    this.dispatchEvent(new CustomEvent("config-changed", { 
+      detail: { config: this._config }, 
+    }));
+  }
+
+  _fireConfigChanged() {
+    this.dispatchEvent(new CustomEvent("config-changed", {
+      detail: { config: this._config },
+    }));
   }
 
   render() {
@@ -120,6 +133,25 @@ class RdGCircleCardEditor extends LitElement {
               this._valueChanged({ target: { value } }, 'alert_value');
             }}
           ></ha-textfield>
+
+          <ha-select
+            label="Tap action"
+            .value=${this._config.tap_action?.action ?? 'none'}
+            @value-changed=${(e) => {
+              const action = e.detail.value;
+              this._config = {
+                ...this._config,
+                tap_action: { action },
+              };
+              this._fireConfigChanged();
+            }}
+          >
+            <mwc-list-item value="none">None</mwc-list-item>
+            <mwc-list-item value="toggle">Toggle</mwc-list-item>
+            <mwc-list-item value="more-info">More Info</mwc-list-item>
+            <mwc-list-item value="navigate">Navigate</mwc-list-item>
+            <mwc-list-item value="call-service">Call Service</mwc-list-item>
+          </ha-select>
 
           <ha-textfield
             label="Positive stroke color"
