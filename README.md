@@ -1,4 +1,4 @@
-# RdG Custom Cards
+# RdG Circle Cards
 
 Visual, responsive and dynamic circular cards for Home Assistant.
 
