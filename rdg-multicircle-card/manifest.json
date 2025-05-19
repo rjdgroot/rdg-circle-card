@@ -6,9 +6,9 @@
   "description": "Configurable 3x2 grid card with 3 to 6 circle graphs for any value sensor. Specially designed for energy dashboards.",
   "authors": ["Rinse de Groot"],
   "keywords": ["lovelace", "sensor", "circle", "custom card", "energy"],
-  "source": "https://github.com/youruser/rdg-circle-card",
-  "documentation": "https://github.com/youruser/rdg-circle-card",
+  "source": "https://github.com/rinsedegroot/rdg-circle-card",
+  "documentation": "https://github.com/rinsedegroot/rdg-circle-card",
   "assets": ["../preview.gif"],
   "dependencies": [],
-  "codeowners": ["@yourgithubusername"]
+  "codeowners": ["@rinsedegroot"]
 }
