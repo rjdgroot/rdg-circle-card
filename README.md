@@ -103,9 +103,8 @@ Each object under `circles:` supports the same options as `rdg-circle-card`.
 
 ## 🧪 Roadmap / Ideas
 
-- [ ] Add tap_action per circle in `rdg-multicircle-card`
 - [ ] Color gradients based on value
-- [ ] Dynamic unit formatting (e.g., kW, °C)
+- [ ] Many more to come
 
 ---
 
