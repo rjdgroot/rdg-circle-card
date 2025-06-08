@@ -24,6 +24,8 @@ This repository contains two custom cards:
 
 ## 🔘 rdg-circle-card
 
+![preview](preview.gif)
+
 A customizable animated radial card for single values.
 
 ### 🔧 Example configuration
@@ -94,12 +96,6 @@ gap: 8
 | `gap`          | Space between circles (px)             | 8       |
 
 Each object under `circles:` supports the same options as `rdg-circle-card`.
-
----
-
-## 🖼 Preview
-
-![preview](preview.gif)
 
 ---
 
