@@ -1,7 +1,12 @@
 {
-  "name": "RdG Circle Cards",
-  "authors": ["rjdgroot"],
-  "type": "module",
+  "name": "RdG Custom Cards",
+  "content_in_root": false,
   "render_readme": true,
-  "filename": "rdg-multicircle-card/rdg-multicircle-card.js"
+  "country": "nl",
+  "domains": ["lovelace"],
+  "filename": null,
+  "jsons": [
+    "rdg-circle-card/manifest.json",
+    "rdg-multicircle-card/manifest.json"
+  ]
 }
