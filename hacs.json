@@ -2,7 +2,6 @@
   "name": "RdG Circle Cards",
   "authors": ["rjdgroot"],
   "type": "module",
-  "content_in_root": false,
   "render_readme": true,
   "country": "nl",
   "domains": ["lovelace"],
