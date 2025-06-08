@@ -3,11 +3,5 @@
   "authors": ["rjdgroot"],
   "type": "module",
   "render_readme": true,
-  "country": "nl",
-  "domains": ["lovelace"],
   "filename": "rdg-multicircle-card/rdg-multicircle-card.js",
-  "jsons": [
-    "rdg-circle-card/manifest.json",
-    "rdg-multicircle-card/manifest.json"
-  ]
 }
