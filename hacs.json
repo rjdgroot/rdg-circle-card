@@ -6,7 +6,7 @@
   "render_readme": true,
   "country": "nl",
   "domains": ["lovelace"],
-  "filename": "rdg-circle-card/rdg-circle-card.js",
+  "filename": "rdg-multicircle-card/rdg-multicircle-card.js",
   "jsons": [
     "rdg-circle-card/manifest.json",
     "rdg-multicircle-card/manifest.json"
