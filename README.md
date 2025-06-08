@@ -16,6 +16,8 @@ This repository contains two custom cards:
 5. Install and then add to your dashboard resources:
 
 ```yaml
+- url: /hacsfiles/rdg-circle-card/rdg-circle-card/rdg-circle-card.js
+  type: module
 - url: /hacsfiles/rdg-circle-card/rdg-multicircle-card.js
   type: module
 ```
