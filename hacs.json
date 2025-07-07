@@ -1,6 +1,5 @@
 {
   "name": "RdG Circle Card",
   "filename": "rdg-circle-card.js",
-  "type": "module",
   "render_readme": true
 }
