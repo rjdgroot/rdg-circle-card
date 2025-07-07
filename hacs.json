@@ -1,9 +1,6 @@
 {
   "name": "RdG Circle Card",
   "filename": "rdg-circle-card.js",
-  "type": "lovelace",
   "render_readme": true,
-  "description": "Visual, responsive and dynamic circular card for Home Assistant dashboards.",
-  "authors": ["rjdgroot"],
-  "keywords": ["circle", "radial", "energy", "sensor", "lovelace"]
+  "description": "Visual, responsive and dynamic circular card for Home Assistant dashboards."
 }
