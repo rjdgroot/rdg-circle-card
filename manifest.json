@@ -3,7 +3,7 @@
   "name": "RdG circle card",
   "version": "1.0.0",
   "type": "lovelace",
-  "description": "Configurable 3x2 grid card with 3 to 6 circle graphs for any value sensor. Specially designed for energy dashboards.",
+  "description": "Visual, responsive and dynamic circular card for Home Assistant.",
   "authors": ["Rinse de Groot"],
   "keywords": ["lovelace", "sensor", "circle", "custom card", "energy"],
   "source": "https://github.com/rjdgroot/rdg-circle-card",
