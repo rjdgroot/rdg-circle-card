@@ -3,6 +3,7 @@
 Visual, responsive and dynamic circular cards for Home Assistant Lovelace dashboards.  
 This repository contains tthe following custom card:
 - **rdg-circle-card**: a single, animated radial circle with value display
+
 For an extra view with a maximum of 6 circles, download the rdg-multicircle-card (rdg-circle-card needed!):
 - **rdg-multicircle-card**: a 2x3 grid of six configurable circles
 
