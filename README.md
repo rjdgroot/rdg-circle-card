@@ -1,4 +1,4 @@
-# RDG Circle Cards
+# RdG circle card
 
 Visual, responsive and dynamic circular cards for Home Assistant Lovelace dashboards.  
 This repository contains tthe following custom card:
