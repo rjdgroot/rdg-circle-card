@@ -17,4 +17,3 @@ jobs:
         with:
           files: |
             rdg-circle-card/*.js
-            rdg-multicircle-card/*.js
