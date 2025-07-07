@@ -1,0 +1,9 @@
+- name: HACS Action
+  uses: hacs/action@22.5.0
+  with:
+    ignore: 
+    category: plugin
+    repository:
+    comment: 
+    github_token:
+          
