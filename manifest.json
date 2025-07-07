@@ -1,9 +1,9 @@
 {
   "manifest_version": 1,
-  "name": "RdG circle card",
+  "name": "RdG Circle Card",
   "version": "1.0.0",
   "type": "lovelace",
-  "description": "Visual, responsive and dynamic circular card for Home Assistant.",
+  "description": "Visual, responsive and dynamic circular card for Home Assistant dashboards.",
   "authors": ["Rinse de Groot"],
   "keywords": ["lovelace", "sensor", "circle", "custom card", "energy"],
   "source": "https://github.com/rjdgroot/rdg-circle-card",
