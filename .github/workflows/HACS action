@@ -1,0 +1,27 @@
+name: "HACS Action"
+description: "Repository validation action for HACS"
+branding:
+  icon: "terminal"
+  color: "gray-dark"
+inputs:
+  ignore:
+    description: 
+    required: false
+    default: 
+  category:
+    description: Plugin
+    required: true
+  repository:
+    description: RdG Circle Card
+    required: false
+  comment:
+    description: 
+    required: false
+    default: 
+  github_token:
+    description: 
+    required: false
+    default: 
+runs:
+  using: "docker"
+  image: "docker://ghcr.io/hacs/action:main"
