@@ -1,7 +1,7 @@
 {
   "name": "RdG Circle Cards",
   "filename": "rdg-multicircle-card.js",
-  "type": "module",
+  "type": "lovelace",
   "render_readme": true,
   "description": "Visual, responsive and dynamic circular cards for Home Assistant.",
   "authors": ["rjdgroot"]
