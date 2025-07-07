@@ -1,8 +1,9 @@
 # RDG Circle Cards
 
 Visual, responsive and dynamic circular cards for Home Assistant Lovelace dashboards.  
-This repository contains two custom cards:
+This repository contains tthe following custom card:
 - **rdg-circle-card**: a single, animated radial circle with value display
+For an extra view with a maximum of 6 circles, download the rdg-multicircle-card (rdg-circle-card needed!):
 - **rdg-multicircle-card**: a 2x3 grid of six configurable circles
 
 ---
@@ -63,43 +64,6 @@ tap_action:
 
 ---
 
-## 🧩 rdg-multicircle-card
-
-Displays up to **six** circular values in a responsive 3x2 grid.  
-Each circle uses the `rdg-circle-card` internally and supports its options.
-
-### 🔧 Example configuration
-
-```yaml
-type: custom:rdg-multicircle-card
-circles:
-  - entity: sensor.temp_1
-    name: Bedroom
-    min: 0
-    max: 30
-    color: '#00AEEF'
-  - entity: sensor.temp_2
-    name: Living Room
-    min: 0
-    max: 30
-    color: '#FF5555'
-  ...
-show_names: true
-strokeWidth: 12
-gap: 8
-```
-
-### ⚙️ Global Options
-
-| Option         | Description                            | Default |
-|----------------|----------------------------------------|---------|
-| `show_names`   | Show labels below each circle          | true    |
-| `strokeWidth`  | Stroke width for all circles           | 10      |
-| `gap`          | Space between circles (px)             | 8       |
-
-Each object under `circles:` supports the same options as `rdg-circle-card`.
-
----
 
 ## 🧪 Roadmap / Ideas
 
@@ -110,5 +74,4 @@ Each object under `circles:` supports the same options as `rdg-circle-card`.
 
 ## 📄 License
 
-MIT License.  
 Created by [@rjdgroot](https://github.com/rjdgroot)
